@@ -1,0 +1,375 @@
+No files changed, compilation skipped
+
+Ran 5 tests for contracts/test/SplitBlocklistReal.t.sol:SplitBlocklistReal
+[PASS] test_Blocklist_AnyoneCanStillRelease() (gas: 237735)
+[PASS] test_Blocklist_BlockedPayeeDoesNotLockTheOtherPayee() (gas: 224557)
+[PASS] test_Blocklist_BlockedSecondPayeeDoesNotLockTheFirst() (gas: 328456)
+[PASS] test_Blocklist_OtherPayeeKeepsWorkingOverNewDeposits() (gas: 249540)
+[PASS] test_Blocklist_UnblockedPayeeCanWithdrawEverythingLater() (gas: 224744)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 1.36ms (619.27µs CPU time)
+
+Ran 10 tests for contracts/test/SplitFactoryReal.t.sol:SplitFactoryReal
+[PASS] test_Factory_AnyoneCanCreateAndCreatorHasNoPowers() (gas: 1153896)
+[PASS] test_Factory_CreatedSplitWorksEndToEnd() (gas: 1275882)
+[PASS] test_Factory_CreatesSplitWithFixedConfiguration() (gas: 660120)
+[PASS] test_Factory_ListAndEnumeration() (gas: 1913326)
+[PASS] test_Factory_RejectsDuplicatePayees() (gas: 71331)
+[PASS] test_Factory_RejectsSharesNotSummingTo10000() (gas: 139841)
+[PASS] test_Factory_RejectsZeroPayee() (gas: 71211)
+[PASS] test_Factory_RejectsZeroShare() (gas: 73514)
+[PASS] test_Factory_SplitCreatedEventExactTopicsAndData() (gas: 656827)
+[PASS] test_Factory_SplitCreatedRawLog() (gas: 659570)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 1.72ms (1.12ms CPU time)
+
+Ran 21 tests for contracts/test/LaunchpadReal.t.sol:LaunchpadReal
+[PASS] test_Launchpad_AcceptsCooldownBoundaries() (gas: 1803611)
+[PASS] test_Launchpad_AcceptsDripBpsBoundaries() (gas: 1778243)
+[PASS] test_Launchpad_AcceptsPeriodBoundaries() (gas: 1750046)
+[PASS] test_Launchpad_AnyoneCanLaunchWithOwnTokens() (gas: 897069)
+[PASS] test_Launchpad_CreatesConfiguredVaultAndFaucet() (gas: 885028)
+[PASS] test_Launchpad_Enumeration() (gas: 2565174)
+[PASS] test_Launchpad_FeeOnTransferCreditsOnlyWhatArrived() (gas: 1523425)
+[PASS] test_Launchpad_FullFlow() (gas: 1064822)
+[PASS] test_Launchpad_LaunchedEvent() (gas: 1728732)
+[PASS] test_Launchpad_LaunchedEventExactTopicsAndData() (gas: 886577)
+[PASS] test_Launchpad_NobodyCanSpendSomeoneElsesAllowance() (gas: 860714)
+[PASS] test_Launchpad_RejectedLaunchLeavesNoTrace() (gas: 28796)
+[PASS] test_Launchpad_RejectsClaimAmountZero() (gas: 19000)
+[PASS] test_Launchpad_RejectsCooldown59() (gas: 19412)
+[PASS] test_Launchpad_RejectsDripBps10000() (gas: 19361)
+[PASS] test_Launchpad_RejectsDripBps65535() (gas: 19316)
+[PASS] test_Launchpad_RejectsDripBpsZero() (gas: 19274)
+[PASS] test_Launchpad_RejectsPeriodBelowOneHour() (gas: 19381)
+[PASS] test_Launchpad_RejectsTokenThatMovesNothing() (gas: 1267698)
+[PASS] test_Launchpad_RejectsZeroAmount() (gas: 18927)
+[PASS] test_Launchpad_RejectsZeroToken() (gas: 16760)
+Suite result: ok. 21 passed; 0 failed; 0 skipped; finished in 4.17ms (3.18ms CPU time)
+
+Ran 11 tests for contracts/test/FaucetReal.t.sol:FaucetReal
+[PASS] test_Faucet_ClaimOnceEver() (gas: 443421)
+[PASS] test_Faucet_ClaimPaysExactAmountToCaller() (gas: 82845)
+[PASS] test_Faucet_ClaimedEvent() (gas: 487714)
+[PASS] test_Faucet_ClaimedEventExactTopicsAndData() (gas: 75709)
+[PASS] test_Faucet_ConstructorAcceptsBoundaries() (gas: 698992)
+[PASS] test_Faucet_ConstructorRejectsBadParameters() (gas: 227948)
+[PASS] test_Faucet_CooldownBoundary() (gas: 92171)
+[PASS] test_Faucet_CooldownIsEnforcedPerAddress() (gas: 136677)
+[PASS] test_Faucet_EmptyFaucetRevertsWithoutSideEffects() (gas: 433282)
+[PASS] test_Faucet_Immutables() (gas: 15694)
+[PASS] test_Faucet_PartialBalancePaysExactlyTheBalance() (gas: 432537)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 1.76ms (1.07ms CPU time)
+
+Ran 8 tests for contracts/test/NoBackdoorReal.t.sol:NoBackdoorReal
+[PASS] test_NoBackdoor_AdminSelectorsAllRevertForEveryActor() (gas: 865461)
+[PASS] test_NoBackdoor_ClaimIsIdenticalForEveryActor() (gas: 310800)
+[PASS] test_NoBackdoor_DripIsIdenticalForEveryActor() (gas: 196341)
+[PASS] test_NoBackdoor_EmptyCalldataAndValueAllRevert() (gas: 263147)
+[PASS] test_NoBackdoor_LaunchSpendsOnlyTheCallersOwnTokens() (gas: 1716896)
+[PASS] test_NoBackdoor_ParametersAndBalancesUnchangedExceptByDripAndClaim() (gas: 1217326)
+[PASS] test_NoBackdoor_ValidFunctionsRejectValue() (gas: 52486)
+[PASS] test_NoBackdoor_ViewsAreIdenticalForEveryActor() (gas: 103620)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 9.26ms (8.46ms CPU time)
+
+Ran 4 tests for contracts/test/ReentrancyReal.t.sol:ReentrancyReal
+[PASS] test_Reentrancy_BubbledClaimReentryRevertsEverything() (gas: 162340)
+[PASS] test_Reentrancy_ClaimReentryFailsAndOuterClaimPaysOnce() (gas: 154745)
+[PASS] test_Reentrancy_DripReentryFails() (gas: 1354229)
+[PASS] test_Reentrancy_LaunchReentryFails() (gas: 3245788)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 1.32ms (613.73µs CPU time)
+
+Ran 3 tests for contracts/test/SplitAbiSurface.t.sol:SplitAbiSurfaceTest
+[PASS] test_SplitAbi_OnlyReleaseWithdrawAndCreateSplitChangeState() (gas: 539575)
+[PASS] test_SplitAbi_SplitFactorySurface() (gas: 58964)
+[PASS] test_SplitAbi_SplitSurface() (gas: 95571)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 9.88ms (9.79ms CPU time)
+
+Ran 5 tests for contracts/test/AbiSurface.t.sol:AbiSurfaceTest
+[PASS] test_Abi_DripFaucetSurface() (gas: 53540)
+[PASS] test_Abi_DripLaunchpadSurface() (gas: 93394)
+[PASS] test_Abi_DripVaultSurface() (gas: 60629)
+[PASS] test_Abi_NoReceiveOrFallback() (gas: 742857)
+[PASS] test_Abi_OnlyThreeStateChangingFunctions() (gas: 820908)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 49.41ms (49.08ms CPU time)
+
+Ran 6 tests for contracts/test/SplitInvariantReal.t.sol:SplitInvariantReal
+[PASS] invariant_Split_AccountingIsMonotonicAndStrangersGetNothing() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_ConfigurationNeverChanges() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_Conservation() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_CreditsAreExactFloorsOfAccountedInflow() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_PendingNeverExceedsBalance() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_WithdrawalsNeverExceedCredit() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2542  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2642  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2489  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2603  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2524  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 7.61s (7.60s CPU time)
+
+Ran 4 tests for contracts/test/SplitNoBackdoorReal.t.sol:SplitNoBackdoorReal
+[PASS] test_SplitNoBackdoor_AdminSelectorsAllRevertForEveryActor() (gas: 1080503)
+[PASS] test_SplitNoBackdoor_ConfigurationNeverChanges() (gas: 1512359)
+[PASS] test_SplitNoBackdoor_NativeValueCannotBeSent() (gas: 281659)
+[PASS] test_SplitNoBackdoor_ReleaseIsIdenticalForEveryCaller() (gas: 732819)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 9.14ms (8.38ms CPU time)
+
+Ran 4 tests for contracts/test/SplitReentrancyReal.t.sol:SplitReentrancyReal
+[PASS] test_SplitReentrancy_BubbledReleaseReentryRevertsEverything() (gas: 250273)
+[PASS] test_SplitReentrancy_BubbledWithdrawReentryRevertsEverything() (gas: 250246)
+[PASS] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 249707)
+[PASS] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 246904)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 1.14ms (466.11µs CPU time)
+
+Ran 21 tests for contracts/test/SplitReal.t.sol:SplitReal
+[PASS] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 256, μ: 1623344, ~: 1623906)
+[PASS] testFuzz_Split_SingleReleaseMatchesFloors(uint16,uint256) (runs: 256, μ: 740691, ~: 745267)
+[PASS] test_Split_AcceptsBoundaryShares() (gas: 1711317)
+[PASS] test_Split_FeeOnTransferTokenDoesNotHurtTheOtherPayee() (gas: 681588)
+[PASS] test_Split_Immutables() (gas: 12429)
+[PASS] test_Split_InvalidTokenRejected() (gas: 23653)
+[PASS] test_Split_LaterDepositsAreSplitToo() (gas: 231576)
+[PASS] test_Split_OddAmountDustStaysAndIsFoldedIntoNextRelease() (gas: 207007)
+[PASS] test_Split_OneWeiReleasesNeverRevertAndStayFair() (gas: 2417814)
+[PASS] test_Split_RejectsDuplicatePayees() (gas: 62705)
+[PASS] test_Split_RejectsSharesNotSummingTo10000() (gas: 240523)
+[PASS] test_Split_RejectsZeroPayee() (gas: 122227)
+[PASS] test_Split_RejectsZeroShare() (gas: 122733)
+[PASS] test_Split_ReleaseCreditsExactSharesAndEmits() (gas: 197457)
+[PASS] test_Split_ReleaseEventExactTopicsAndData() (gas: 184586)
+[PASS] test_Split_ReleaseWithNothingNeverReverts() (gas: 30515)
+[PASS] test_Split_SecondWithdrawFindsNothing() (gas: 208703)
+[PASS] test_Split_StrangerCannotWithdraw() (gas: 195453)
+[PASS] test_Split_TokensAreAccountedSeparately() (gas: 801215)
+[PASS] test_Split_WithdrawAccountsForUnreleasedTokensItself() (gas: 194314)
+[PASS] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 212568)
+Suite result: ok. 21 passed; 0 failed; 0 skipped; finished in 721.76ms (728.17ms CPU time)
+
+Ran 12 tests for contracts/test/VaultReal.t.sol:VaultReal
+[PASS] testFuzz_Vault_DripMathOver1000Drips(uint16,uint256) (runs: 256, μ: 9495064, ~: 7815316)
+[PASS] testFuzz_Vault_MulDivNeverRevertsAndIsBelowBalance(uint256,uint16) (runs: 256, μ: 1424, ~: 1249)
+[PASS] test_Vault_ConstructorAcceptsBoundaries() (gas: 1644132)
+[PASS] test_Vault_ConstructorRejectsBadParameters() (gas: 343807)
+[PASS] test_Vault_DripTwiceInOnePeriodReverts() (gas: 80053)
+[PASS] test_Vault_DrippedEvent() (gas: 53798)
+[PASS] test_Vault_DrippedEventExactTopicsAndData() (gas: 56804)
+[PASS] test_Vault_DustRevertsWithNothingToDrip() (gas: 1336027)
+[PASS] test_Vault_FirstDripIsAvailableImmediately() (gas: 62679)
+[PASS] test_Vault_Immutables() (gas: 12369)
+[PASS] test_Vault_MaxPeriodFirstDripImmediateSecondNever() (gas: 482427)
+[PASS] test_Vault_MissedPeriodsDoNotAccumulate() (gas: 94030)
+Suite result: ok. 12 passed; 0 failed; 0 skipped; finished in 3.03s (3.04s CPU time)
+
+Ran 7 tests for contracts/test/InvariantReal.t.sol:InvariantReal
+[PASS] invariant_FaucetPaysOutNoMoreThanItReceived() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_ImmutablesNeverChange() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_NoAddressPaidTwiceWithinOneCooldown() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_NoTwoDripsCloserThanOnePeriod() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_ReturnValuesMatchMeasuredBalances() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_TokenConservation() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+[PASS] invariant_VaultBalanceNeverZero() (runs: 128, calls: 12800, reverts: 0)
+
+╭-------------+---------------+-------+---------+----------╮
+| Contract    | Selector      | Calls | Reverts | Discards |
++==========================================================+
+| DripHandler | claim         | 2158  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | donate        | 2064  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | drip          | 2234  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | junk          | 2138  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | launchAnother | 2136  | 0       | 0        |
+|-------------+---------------+-------+---------+----------|
+| DripHandler | warp          | 2070  | 0       | 0        |
+╰-------------+---------------+-------+---------+----------╯
+
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 10.72s (24.77s CPU time)
+
+Ran 14 test suites in 10.74s (22.16s CPU time): 121 tests passed, 0 failed, 0 skipped (121 total tests)

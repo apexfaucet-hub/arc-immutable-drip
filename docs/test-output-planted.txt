@@ -1,0 +1,616 @@
+No files changed, compilation skipped
+
+Ran 5 tests for test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_BlocklistTest
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Blocklist_AnyoneCanStillRelease() (gas: 200452)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Blocklist_BlockedPayeeDoesNotLockTheOtherPayee() (gas: 172701)
+[FAIL: Error != expected error: NothingToWithdraw() != Blocked(0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e)] test_Blocklist_BlockedSecondPayeeDoesNotLockTheFirst() (gas: 173657)
+[FAIL: NothingToWithdraw()] test_Blocklist_OtherPayeeKeepsWorkingOverNewDeposits() (gas: 174894)
+[FAIL: NothingToWithdraw()] test_Blocklist_UnblockedPayeeCanWithdrawEverythingLater() (gas: 174881)
+Suite result: FAILED. 0 passed; 5 failed; 0 skipped; finished in 1.61ms (544.64µs CPU time)
+
+Ran 4 tests for test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_ReentrancyTest
+[PASS] test_SplitReentrancy_BubbledReleaseReentryRevertsEverything() (gas: 250273)
+[PASS] test_SplitReentrancy_BubbledWithdrawReentryRevertsEverything() (gas: 250246)
+[PASS] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 249707)
+[PASS] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 246904)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 1.87ms (662.03µs CPU time)
+
+Ran 11 tests for test-planted/P1_FaucetNoCooldown.t.sol:P1_FaucetNoCooldownTest
+[FAIL: next call did not revert as expected] test_Faucet_ClaimOnceEver() (gas: 435624)
+[PASS] test_Faucet_ClaimPaysExactAmountToCaller() (gas: 82750)
+[PASS] test_Faucet_ClaimedEvent() (gas: 473895)
+[PASS] test_Faucet_ClaimedEventExactTopicsAndData() (gas: 75614)
+[PASS] test_Faucet_ConstructorAcceptsBoundaries() (gas: 671739)
+[PASS] test_Faucet_ConstructorRejectsBadParameters() (gas: 227902)
+[FAIL: next call did not revert as expected] test_Faucet_CooldownBoundary() (gas: 85255)
+[FAIL: next call did not revert as expected] test_Faucet_CooldownIsEnforcedPerAddress() (gas: 84742)
+[PASS] test_Faucet_EmptyFaucetRevertsWithoutSideEffects() (gas: 417269)
+[PASS] test_Faucet_Immutables() (gas: 15694)
+[PASS] test_Faucet_PartialBalancePaysExactlyTheBalance() (gas: 416624)
+Suite result: FAILED. 8 passed; 3 failed; 0 skipped; finished in 2.23ms (1.30ms CPU time)
+
+Ran 21 tests for test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_SplitTest
+[FAIL: assertion failed: 620000 > 62; counterexample: calldata=0xd533ee1a000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0e args=[1, 3514649358 [3.514e9]]] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: assertion failed: 3514649358 != 351464; counterexample: calldata=0xd61002ad000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0e args=[1, 3514649358 [3.514e9]]] testFuzz_Split_SingleReleaseMatchesFloors(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[PASS] test_Split_AcceptsBoundaryShares() (gas: 1505616)
+[FAIL: credit is 700: 1000000000000000000000 != 700000000000000000000] test_Split_FeeOnTransferTokenDoesNotHurtTheOtherPayee() (gas: 661136)
+[PASS] test_Split_Immutables() (gas: 12429)
+[PASS] test_Split_InvalidTokenRejected() (gas: 23653)
+[FAIL: assertion failed: 100000000000000000000 != 70000000000000000000] test_Split_LaterDepositsAreSplitToo() (gas: 174483)
+[FAIL: floor(70.7): 101 != 70] test_Split_OddAmountDustStaysAndIsFoldedIntoNextRelease() (gas: 143325)
+[FAIL: 70% of 200, not starved by repeated rounding: 200 != 140] test_Split_OneWeiReleasesNeverRevertAndStayFair() (gas: 2817890)
+[PASS] test_Split_RejectsDuplicatePayees() (gas: 62612)
+[PASS] test_Split_RejectsSharesNotSummingTo10000() (gas: 240263)
+[PASS] test_Split_RejectsZeroPayee() (gas: 122079)
+[PASS] test_Split_RejectsZeroShare() (gas: 122585)
+[FAIL: Released param mismatch at amount0: expected=700000000000000000000 [7e20], got=1000000000000000000000 [1e21], amount1: expected=300000000000000000000 [3e20], got=0] test_Split_ReleaseCreditsExactSharesAndEmits() (gas: 147380)
+[FAIL: assertion failed: 0x00000000000000000000000000000000000000000000003635c9adc5dea000000000000000000000000000000000000000000000000000000000000000000000 != 0x000000000000000000000000000000000000000000000025f273933db570000000000000000000000000000000000000000000000000001043561a8829300000] test_Split_ReleaseEventExactTopicsAndData() (gas: 146987)
+[PASS] test_Split_ReleaseWithNothingNeverReverts() (gas: 29900)
+[FAIL: first withdraw pays exactly 70%: 1000000000000000000000 != 700000000000000000000] test_Split_SecondWithdrawFindsNothing() (gas: 173581)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Split_StrangerCannotWithdraw() (gas: 158230)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Split_TokensAreAccountedSeparately() (gas: 723874)
+[FAIL: NothingToWithdraw()] test_Split_WithdrawAccountsForUnreleasedTokensItself() (gas: 145232)
+[FAIL: Withdrawn param mismatch at amount: expected=700000000000000000000 [7e20], got=1000000000000000000000 [1e21]] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 183083)
+Suite result: FAILED. 8 passed; 13 failed; 0 skipped; finished in 26.98ms (26.14ms CPU time)
+
+Ran 5 tests for test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_BlocklistTest
+[PASS] test_Blocklist_AnyoneCanStillRelease() (gas: 237735)
+[PASS] test_Blocklist_BlockedPayeeDoesNotLockTheOtherPayee() (gas: 244346)
+[PASS] test_Blocklist_BlockedSecondPayeeDoesNotLockTheFirst() (gas: 348245)
+[PASS] test_Blocklist_OtherPayeeKeepsWorkingOverNewDeposits() (gas: 249540)
+[PASS] test_Blocklist_UnblockedPayeeCanWithdrawEverythingLater() (gas: 224655)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 1.21ms (545.02µs CPU time)
+
+Ran 21 tests for test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_SplitTest
+[PASS] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 256, μ: 1628271, ~: 1628054)
+[PASS] testFuzz_Split_SingleReleaseMatchesFloors(uint16,uint256) (runs: 256, μ: 719641, ~: 744962)
+[PASS] test_Split_AcceptsBoundaryShares() (gas: 1710850)
+[PASS] test_Split_FeeOnTransferTokenDoesNotHurtTheOtherPayee() (gas: 681588)
+[PASS] test_Split_Immutables() (gas: 12429)
+[PASS] test_Split_InvalidTokenRejected() (gas: 23653)
+[PASS] test_Split_LaterDepositsAreSplitToo() (gas: 231576)
+[PASS] test_Split_OddAmountDustStaysAndIsFoldedIntoNextRelease() (gas: 207007)
+[PASS] test_Split_OneWeiReleasesNeverRevertAndStayFair() (gas: 2417814)
+[PASS] test_Split_RejectsDuplicatePayees() (gas: 62671)
+[FAIL: next call did not revert as expected] test_Split_RejectsSharesNotSummingTo10000() (gas: 575627)
+[PASS] test_Split_RejectsZeroPayee() (gas: 122173)
+[PASS] test_Split_RejectsZeroShare() (gas: 122679)
+[PASS] test_Split_ReleaseCreditsExactSharesAndEmits() (gas: 197457)
+[PASS] test_Split_ReleaseEventExactTopicsAndData() (gas: 184586)
+[PASS] test_Split_ReleaseWithNothingNeverReverts() (gas: 30515)
+[PASS] test_Split_SecondWithdrawFindsNothing() (gas: 208703)
+[PASS] test_Split_StrangerCannotWithdraw() (gas: 195453)
+[PASS] test_Split_TokensAreAccountedSeparately() (gas: 801215)
+[PASS] test_Split_WithdrawAccountsForUnreleasedTokensItself() (gas: 194314)
+[PASS] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 212568)
+Suite result: FAILED. 20 passed; 1 failed; 0 skipped; finished in 744.83ms (743.56ms CPU time)
+
+Ran 4 tests for test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_ReentrancyTest
+[PASS] test_SplitReentrancy_BubbledReleaseReentryRevertsEverything() (gas: 209858)
+[PASS] test_SplitReentrancy_BubbledWithdrawReentryRevertsEverything() (gas: 209831)
+[FAIL: attacker ends with exactly its share: 1000000000000000000000 != 700000000000000000000] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 207829)
+[FAIL: attacker ends with exactly its share: 1000000000000000000000 != 700000000000000000000] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 205026)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 923.21µs (322.60µs CPU time)
+{"timestamp":1794483312,"event":"failure","invariant":"invariant_Split_CreditsAreExactFloorsOfAccountedInflow","target":"test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_InvariantTest","reason":"assertion failed: 3 != 2"}
+
+Ran 11 tests for test-planted/P5_FaucetReentrant.t.sol:P5_FaucetReentrant_FaucetSpecTest
+[PASS] test_Faucet_ClaimOnceEver() (gas: 406182)
+[PASS] test_Faucet_ClaimPaysExactAmountToCaller() (gas: 80408)
+[PASS] test_Faucet_ClaimedEvent() (gas: 448354)
+[PASS] test_Faucet_ClaimedEventExactTopicsAndData() (gas: 73272)
+[PASS] test_Faucet_ConstructorAcceptsBoundaries() (gas: 626038)
+[PASS] test_Faucet_ConstructorRejectsBadParameters() (gas: 227809)
+[PASS] test_Faucet_CooldownBoundary() (gas: 86181)
+[PASS] test_Faucet_CooldownIsEnforcedPerAddress() (gas: 130687)
+[PASS] test_Faucet_EmptyFaucetRevertsWithoutSideEffects() (gas: 396062)
+[PASS] test_Faucet_Immutables() (gas: 15694)
+[PASS] test_Faucet_PartialBalancePaysExactlyTheBalance() (gas: 395317)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 1.77ms (1.13ms CPU time)
+
+Ran 4 tests for test-planted/P5_FaucetReentrant.t.sol:P5_FaucetReentrant_ReentrancySpecTest
+[FAIL: next call did not revert as expected] test_Reentrancy_BubbledClaimReentryRevertsEverything() (gas: 145356)
+[FAIL: attacker ends with exactly ONE claimAmount: 20000000000000000000 != 10000000000000000000] test_Reentrancy_ClaimReentryFailsAndOuterClaimPaysOnce() (gas: 128947)
+[PASS] test_Reentrancy_DripReentryFails() (gas: 1354229)
+[PASS] test_Reentrancy_LaunchReentryFails() (gas: 3245788)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 1.51ms (746.26µs CPU time)
+
+Ran 5 tests for test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_BlocklistTest
+[PASS] test_Blocklist_AnyoneCanStillRelease() (gas: 237735)
+[PASS] test_Blocklist_BlockedPayeeDoesNotLockTheOtherPayee() (gas: 224557)
+[PASS] test_Blocklist_BlockedSecondPayeeDoesNotLockTheFirst() (gas: 328456)
+[PASS] test_Blocklist_OtherPayeeKeepsWorkingOverNewDeposits() (gas: 249540)
+[PASS] test_Blocklist_UnblockedPayeeCanWithdrawEverythingLater() (gas: 224744)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 1.27ms (665.52µs CPU time)
+
+Ran 10 tests for test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_FactoryTest
+[PASS] test_Factory_AnyoneCanCreateAndCreatorHasNoPowers() (gas: 1153732)
+[PASS] test_Factory_CreatedSplitWorksEndToEnd() (gas: 1275718)
+[PASS] test_Factory_CreatesSplitWithFixedConfiguration() (gas: 659956)
+[PASS] test_Factory_ListAndEnumeration() (gas: 1912834)
+[PASS] test_Factory_RejectsDuplicatePayees() (gas: 71298)
+[FAIL: next call did not revert as expected] test_Factory_RejectsSharesNotSummingTo10000() (gas: 653921)
+[PASS] test_Factory_RejectsZeroPayee() (gas: 71178)
+[PASS] test_Factory_RejectsZeroShare() (gas: 73481)
+[PASS] test_Factory_SplitCreatedEventExactTopicsAndData() (gas: 656663)
+[PASS] test_Factory_SplitCreatedRawLog() (gas: 659406)
+Suite result: FAILED. 9 passed; 1 failed; 0 skipped; finished in 1.76ms (1.12ms CPU time)
+{"timestamp":1794483316,"event":"failure","invariant":"invariant_Split_PendingNeverExceedsBalance","target":"test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_InvariantTest","reason":"assertion failed: 5 > 2"}
+{"timestamp":1794483316,"event":"failure","invariant":"invariant_Split_WithdrawalsNeverExceedCredit","target":"test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_InvariantTest","reason":"assertion failed: 6755454934381704119728 > 6755454934381704119725"}
+
+Ran 6 tests for test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_InvariantTest
+[PASS] invariant_Split_AccountingIsMonotonicAndStrangersGetNothing() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_ConfigurationNeverChanges() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_Conservation() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_CreditsAreExactFloorsOfAccountedInflow() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[FAIL: assertion failed: 5 > 2]
+	[Sequence] (original: 8, shrunk: 2)
+		sender=0x00000000000000000000000000000000FfD69C0F addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[1598]
+		sender=0x21d2e27E7c1437F1Ba5F16fd8370c421fc4671cb addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[138770194304204033988382942427965415205716514242527842032906833447652 [1.387e68]]
+ invariant_Split_PendingNeverExceedsBalance() (runs: 0, calls: 0, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fundTiny | 2     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 1     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 5     | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[FAIL: assertion failed: 6755454934381704119728 > 6755454934381704119725]
+	[Sequence] (original: 19, shrunk: 3)
+		sender=0x00000000000000000000000000000000FfD69C0F addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[1695]
+		sender=0x21d2e27E7c1437F1Ba5F16fd8370c421fc4671cb addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[138770194304204033988382942427965415205716514242527842032906833447652 [1.387e68]]
+		sender=0x00000000000000000000000000000000091466e1 addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[20048035515260055098179884867168328821008789440 [2.004e46]]
+ invariant_Split_WithdrawalsNeverExceedCredit() (runs: 0, calls: 0, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 3     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 3     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 3     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 8     | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+Suite result: FAILED. 4 passed; 2 failed; 0 skipped; finished in 5.44s (5.44s CPU time)
+
+Ran 4 tests for test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_ReentrancyTest
+[PASS] test_SplitReentrancy_BubbledReleaseReentryRevertsEverything() (gas: 250162)
+[PASS] test_SplitReentrancy_BubbledWithdrawReentryRevertsEverything() (gas: 250135)
+[FAIL: assertion failed: 700000000000000000000 != 0] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 259639)
+[FAIL: assertion failed: 700000000000000000000 != 0] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 256836)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 1.37ms (415.40µs CPU time)
+
+Ran 21 tests for test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_SplitTest
+[FAIL: pending never exceeds the balance: 1197574105269852116148712416272 > 1197454347859325130937097545032; counterexample: calldata=0xd533ee1a000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0d args=[1, 3514649357 [3.514e9]]] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Split_SingleReleaseMatchesFloors(uint16,uint256) (runs: 256, μ: 718816, ~: 744127)
+[PASS] test_Split_AcceptsBoundaryShares() (gas: 1708317)
+[PASS] test_Split_FeeOnTransferTokenDoesNotHurtTheOtherPayee() (gas: 701377)
+[PASS] test_Split_Immutables() (gas: 12429)
+[PASS] test_Split_InvalidTokenRejected() (gas: 23653)
+[FAIL: assertion failed: 161000000000000000000 != 140000000000000000000] test_Split_LaterDepositsAreSplitToo() (gas: 235104)
+[PASS] test_Split_OddAmountDustStaysAndIsFoldedIntoNextRelease() (gas: 207007)
+[PASS] test_Split_OneWeiReleasesNeverRevertAndStayFair() (gas: 2417814)
+[PASS] test_Split_RejectsDuplicatePayees() (gas: 62705)
+[PASS] test_Split_RejectsSharesNotSummingTo10000() (gas: 240523)
+[PASS] test_Split_RejectsZeroPayee() (gas: 122227)
+[PASS] test_Split_RejectsZeroShare() (gas: 122733)
+[PASS] test_Split_ReleaseCreditsExactSharesAndEmits() (gas: 197457)
+[PASS] test_Split_ReleaseEventExactTopicsAndData() (gas: 184586)
+[PASS] test_Split_ReleaseWithNothingNeverReverts() (gas: 30515)
+[FAIL: Error != expected error: ERC20InsufficientBalance(0x2e234DAe75C793f67A35089C9d99245E1C58470b, 300000000000000000000 [3e20], 700000000000000000000 [7e20]) != NothingToWithdraw()] test_Split_SecondWithdrawFindsNothing() (gas: 224907)
+[PASS] test_Split_StrangerCannotWithdraw() (gas: 195453)
+[PASS] test_Split_TokensAreAccountedSeparately() (gas: 801215)
+[PASS] test_Split_WithdrawAccountsForUnreleasedTokensItself() (gas: 194314)
+[FAIL: assertion failed: 700000000000000000000 != 0] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 232576)
+Suite result: FAILED. 17 passed; 4 failed; 0 skipped; finished in 48.07ms (46.95ms CPU time)
+
+Ran 12 tests for test-planted/P3_VaultAccumulates.t.sol:P3_VaultAccumulatesTest
+[FAIL: assertion failed: 1750003600 != 1750007200; counterexample: calldata=0xa37bcee900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000004670 args=[1, 18032 [1.803e4]]] testFuzz_Vault_DripMathOver1000Drips(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Vault_MulDivNeverRevertsAndIsBelowBalance(uint256,uint16) (runs: 256, μ: 1449, ~: 1249)
+[PASS] test_Vault_ConstructorAcceptsBoundaries() (gas: 1646555)
+[PASS] test_Vault_ConstructorRejectsBadParameters() (gas: 343837)
+[PASS] test_Vault_DripTwiceInOnePeriodReverts() (gas: 80265)
+[PASS] test_Vault_DrippedEvent() (gas: 53904)
+[PASS] test_Vault_DrippedEventExactTopicsAndData() (gas: 56910)
+[PASS] test_Vault_DustRevertsWithNothingToDrip() (gas: 1337241)
+[PASS] test_Vault_FirstDripIsAvailableImmediately() (gas: 62785)
+[PASS] test_Vault_Immutables() (gas: 12369)
+[PASS] test_Vault_MaxPeriodFirstDripImmediateSecondNever() (gas: 483141)
+[FAIL: clock restarts at block.timestamp: 1750172800 != 1750950400] test_Vault_MissedPeriodsDoNotAccumulate() (gas: 77633)
+Suite result: FAILED. 10 passed; 2 failed; 0 skipped; finished in 21.35ms (20.48ms CPU time)
+
+Ran 21 tests for test-planted/P4_LaunchpadTrustsAmount.t.sol:P4_LaunchpadTrustsAmountTest
+[PASS] test_Launchpad_AcceptsCooldownBoundaries() (gas: 1801595)
+[PASS] test_Launchpad_AcceptsDripBpsBoundaries() (gas: 1776227)
+[PASS] test_Launchpad_AcceptsPeriodBoundaries() (gas: 1748030)
+[PASS] test_Launchpad_AnyoneCanLaunchWithOwnTokens() (gas: 896061)
+[PASS] test_Launchpad_CreatesConfiguredVaultAndFaucet() (gas: 884020)
+[PASS] test_Launchpad_Enumeration() (gas: 2562150)
+[FAIL: Launched param mismatch at amountReceived: expected=99000000000000000000000 [9.9e22], got=100000000000000000000000 [1e23]] test_Launchpad_FeeOnTransferCreditsOnlyWhatArrived() (gas: 1441188)
+[PASS] test_Launchpad_FullFlow() (gas: 1063814)
+[PASS] test_Launchpad_LaunchedEvent() (gas: 1726716)
+[PASS] test_Launchpad_LaunchedEventExactTopicsAndData() (gas: 885569)
+[PASS] test_Launchpad_NobodyCanSpendSomeoneElsesAllowance() (gas: 860714)
+[PASS] test_Launchpad_RejectedLaunchLeavesNoTrace() (gas: 28796)
+[PASS] test_Launchpad_RejectsClaimAmountZero() (gas: 19000)
+[PASS] test_Launchpad_RejectsCooldown59() (gas: 19412)
+[PASS] test_Launchpad_RejectsDripBps10000() (gas: 19361)
+[PASS] test_Launchpad_RejectsDripBps65535() (gas: 19316)
+[PASS] test_Launchpad_RejectsDripBpsZero() (gas: 19274)
+[PASS] test_Launchpad_RejectsPeriodBelowOneHour() (gas: 19381)
+[FAIL: next call did not revert as expected] test_Launchpad_RejectsTokenThatMovesNothing() (gas: 1266817)
+[PASS] test_Launchpad_RejectsZeroAmount() (gas: 18927)
+[PASS] test_Launchpad_RejectsZeroToken() (gas: 16760)
+Suite result: FAILED. 19 passed; 2 failed; 0 skipped; finished in 3.85ms (2.97ms CPU time)
+
+Ran 12 tests for test-planted/P2_VaultNoPeriod.t.sol:P2_VaultNoPeriodTest
+[PASS] testFuzz_Vault_DripMathOver1000Drips(uint16,uint256) (runs: 256, μ: 7945376, ~: 2554394)
+[PASS] testFuzz_Vault_MulDivNeverRevertsAndIsBelowBalance(uint256,uint16) (runs: 256, μ: 1446, ~: 1249)
+[PASS] test_Vault_ConstructorAcceptsBoundaries() (gas: 1608885)
+[PASS] test_Vault_ConstructorRejectsBadParameters() (gas: 343774)
+[FAIL: next call did not revert as expected] test_Vault_DripTwiceInOnePeriodReverts() (gas: 67357)
+[PASS] test_Vault_DrippedEvent() (gas: 53774)
+[PASS] test_Vault_DrippedEventExactTopicsAndData() (gas: 56780)
+[PASS] test_Vault_DustRevertsWithNothingToDrip() (gas: 1318152)
+[PASS] test_Vault_FirstDripIsAvailableImmediately() (gas: 62555)
+[PASS] test_Vault_Immutables() (gas: 12369)
+[FAIL: next call did not revert as expected] test_Vault_MaxPeriodFirstDripImmediateSecondNever() (gas: 480520)
+[FAIL: next call did not revert as expected] test_Vault_MissedPeriodsDoNotAccumulate() (gas: 88557)
+Suite result: FAILED. 9 passed; 3 failed; 0 skipped; finished in 5.92s (5.93s CPU time)
+
+Ran 6 tests for test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_InvariantTest
+[PASS] invariant_Split_AccountingIsMonotonicAndStrangersGetNothing() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_ConfigurationNeverChanges() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_Conservation() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_CreditsAreExactFloorsOfAccountedInflow() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_PendingNeverExceedsBalance() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_WithdrawalsNeverExceedCredit() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 3.27s (6.44s CPU time)
+
+Ran 6 tests for test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_InvariantTest
+[PASS] invariant_Split_AccountingIsMonotonicAndStrangersGetNothing() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_ConfigurationNeverChanges() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_Conservation() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[FAIL: assertion failed: 3 != 2]
+	[Sequence] (original: 3, shrunk: 2)
+		sender=0x141bb86a34b9B10FA9e037780c04A17AB9EB5796 addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[2]
+		sender=0x00000000000000000000000000000000000001fB addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[1664]
+ invariant_Split_CreditsAreExactFloorsOfAccountedInflow() (runs: 0, calls: 0, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fundTiny | 1     | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2     | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_PendingNeverExceedsBalance() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+[PASS] invariant_Split_WithdrawalsNeverExceedCredit() (runs: 128, calls: 12800, reverts: 0)
+
+╭--------------+----------+-------+---------+----------╮
+| Contract     | Selector | Calls | Reverts | Discards |
++======================================================+
+| SplitHandler | fund     | 2569  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | fundTiny | 2577  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | junk     | 2616  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | release  | 2552  | 0       | 0        |
+|--------------+----------+-------+---------+----------|
+| SplitHandler | withdraw | 2486  | 0       | 0        |
+╰--------------+----------+-------+---------+----------╯
+
+Suite result: FAILED. 5 passed; 1 failed; 0 skipped; finished in 6.50s (5.75s CPU time)
+
+Ran 19 test suites in 6.51s (22.00s CPU time): 146 tests passed, 43 failed, 0 skipped (189 total tests)
+
+Failing tests:
+Encountered 3 failing tests in test-planted/P1_FaucetNoCooldown.t.sol:P1_FaucetNoCooldownTest
+[FAIL: next call did not revert as expected] test_Faucet_ClaimOnceEver() (gas: 435624)
+[FAIL: next call did not revert as expected] test_Faucet_CooldownBoundary() (gas: 85255)
+[FAIL: next call did not revert as expected] test_Faucet_CooldownIsEnforcedPerAddress() (gas: 84742)
+
+Encountered 3 failing tests in test-planted/P2_VaultNoPeriod.t.sol:P2_VaultNoPeriodTest
+[FAIL: next call did not revert as expected] test_Vault_DripTwiceInOnePeriodReverts() (gas: 67357)
+[FAIL: next call did not revert as expected] test_Vault_MaxPeriodFirstDripImmediateSecondNever() (gas: 480520)
+[FAIL: next call did not revert as expected] test_Vault_MissedPeriodsDoNotAccumulate() (gas: 88557)
+
+Encountered 2 failing tests in test-planted/P3_VaultAccumulates.t.sol:P3_VaultAccumulatesTest
+[FAIL: assertion failed: 1750003600 != 1750007200; counterexample: calldata=0xa37bcee900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000004670 args=[1, 18032 [1.803e4]]] testFuzz_Vault_DripMathOver1000Drips(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: clock restarts at block.timestamp: 1750172800 != 1750950400] test_Vault_MissedPeriodsDoNotAccumulate() (gas: 77633)
+
+Encountered 2 failing tests in test-planted/P4_LaunchpadTrustsAmount.t.sol:P4_LaunchpadTrustsAmountTest
+[FAIL: Launched param mismatch at amountReceived: expected=99000000000000000000000 [9.9e22], got=100000000000000000000000 [1e23]] test_Launchpad_FeeOnTransferCreditsOnlyWhatArrived() (gas: 1441188)
+[FAIL: next call did not revert as expected] test_Launchpad_RejectsTokenThatMovesNothing() (gas: 1266817)
+
+Encountered 2 failing tests in test-planted/P5_FaucetReentrant.t.sol:P5_FaucetReentrant_ReentrancySpecTest
+[FAIL: next call did not revert as expected] test_Reentrancy_BubbledClaimReentryRevertsEverything() (gas: 145356)
+[FAIL: attacker ends with exactly ONE claimAmount: 20000000000000000000 != 10000000000000000000] test_Reentrancy_ClaimReentryFailsAndOuterClaimPaysOnce() (gas: 128947)
+
+Encountered 1 failing test in test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_FactoryTest
+[FAIL: next call did not revert as expected] test_Factory_RejectsSharesNotSummingTo10000() (gas: 653921)
+
+Encountered 1 failing test in test-planted/Sa_SplitNoSumCheck.t.sol:Sa_SplitNoSumCheck_SplitTest
+[FAIL: next call did not revert as expected] test_Split_RejectsSharesNotSummingTo10000() (gas: 575627)
+
+Encountered 5 failing tests in test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_BlocklistTest
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Blocklist_AnyoneCanStillRelease() (gas: 200452)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Blocklist_BlockedPayeeDoesNotLockTheOtherPayee() (gas: 172701)
+[FAIL: Error != expected error: NothingToWithdraw() != Blocked(0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e)] test_Blocklist_BlockedSecondPayeeDoesNotLockTheFirst() (gas: 173657)
+[FAIL: NothingToWithdraw()] test_Blocklist_OtherPayeeKeepsWorkingOverNewDeposits() (gas: 174894)
+[FAIL: NothingToWithdraw()] test_Blocklist_UnblockedPayeeCanWithdrawEverythingLater() (gas: 174881)
+
+Encountered 1 failing test in test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_InvariantTest
+[FAIL: assertion failed: 3 != 2]
+	[Sequence] (original: 3, shrunk: 2)
+		sender=0x141bb86a34b9B10FA9e037780c04A17AB9EB5796 addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[2]
+		sender=0x00000000000000000000000000000000000001fB addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[1664]
+ invariant_Split_CreditsAreExactFloorsOfAccountedInflow() (runs: 0, calls: 0, reverts: 0)
+
+Encountered 2 failing tests in test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_ReentrancyTest
+[FAIL: attacker ends with exactly its share: 1000000000000000000000 != 700000000000000000000] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 207829)
+[FAIL: attacker ends with exactly its share: 1000000000000000000000 != 700000000000000000000] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 205026)
+
+Encountered 13 failing tests in test-planted/Sb_SplitPaysAllToPayee0.t.sol:Sb_SplitPaysAllToPayee0_SplitTest
+[FAIL: assertion failed: 620000 > 62; counterexample: calldata=0xd533ee1a000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0e args=[1, 3514649358 [3.514e9]]] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: assertion failed: 3514649358 != 351464; counterexample: calldata=0xd61002ad000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0e args=[1, 3514649358 [3.514e9]]] testFuzz_Split_SingleReleaseMatchesFloors(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: credit is 700: 1000000000000000000000 != 700000000000000000000] test_Split_FeeOnTransferTokenDoesNotHurtTheOtherPayee() (gas: 661136)
+[FAIL: assertion failed: 100000000000000000000 != 70000000000000000000] test_Split_LaterDepositsAreSplitToo() (gas: 174483)
+[FAIL: floor(70.7): 101 != 70] test_Split_OddAmountDustStaysAndIsFoldedIntoNextRelease() (gas: 143325)
+[FAIL: 70% of 200, not starved by repeated rounding: 200 != 140] test_Split_OneWeiReleasesNeverRevertAndStayFair() (gas: 2817890)
+[FAIL: Released param mismatch at amount0: expected=700000000000000000000 [7e20], got=1000000000000000000000 [1e21], amount1: expected=300000000000000000000 [3e20], got=0] test_Split_ReleaseCreditsExactSharesAndEmits() (gas: 147380)
+[FAIL: assertion failed: 0x00000000000000000000000000000000000000000000003635c9adc5dea000000000000000000000000000000000000000000000000000000000000000000000 != 0x000000000000000000000000000000000000000000000025f273933db570000000000000000000000000000000000000000000000000001043561a8829300000] test_Split_ReleaseEventExactTopicsAndData() (gas: 146987)
+[FAIL: first withdraw pays exactly 70%: 1000000000000000000000 != 700000000000000000000] test_Split_SecondWithdrawFindsNothing() (gas: 173581)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Split_StrangerCannotWithdraw() (gas: 158230)
+[FAIL: assertion failed: 1000000000000000000000 != 700000000000000000000] test_Split_TokensAreAccountedSeparately() (gas: 723874)
+[FAIL: NothingToWithdraw()] test_Split_WithdrawAccountsForUnreleasedTokensItself() (gas: 145232)
+[FAIL: Withdrawn param mismatch at amount: expected=700000000000000000000 [7e20], got=1000000000000000000000 [1e21]] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 183083)
+
+Encountered 2 failing tests in test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_InvariantTest
+[FAIL: assertion failed: 5 > 2]
+	[Sequence] (original: 8, shrunk: 2)
+		sender=0x00000000000000000000000000000000FfD69C0F addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[1598]
+		sender=0x21d2e27E7c1437F1Ba5F16fd8370c421fc4671cb addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[138770194304204033988382942427965415205716514242527842032906833447652 [1.387e68]]
+ invariant_Split_PendingNeverExceedsBalance() (runs: 0, calls: 0, reverts: 0)
+[FAIL: assertion failed: 6755454934381704119728 > 6755454934381704119725]
+	[Sequence] (original: 19, shrunk: 3)
+		sender=0x00000000000000000000000000000000FfD69C0F addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=fundTiny(uint256) args=[1695]
+		sender=0x21d2e27E7c1437F1Ba5F16fd8370c421fc4671cb addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[138770194304204033988382942427965415205716514242527842032906833447652 [1.387e68]]
+		sender=0x00000000000000000000000000000000091466e1 addr=[contracts/test/mocks/SplitHandler.sol:SplitHandler]0xF62849F9A0B5Bf2913b396098F7c7019b51A820a calldata=withdraw(uint256) args=[20048035515260055098179884867168328821008789440 [2.004e46]]
+ invariant_Split_WithdrawalsNeverExceedCredit() (runs: 0, calls: 0, reverts: 0)
+
+Encountered 2 failing tests in test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_ReentrancyTest
+[FAIL: assertion failed: 700000000000000000000 != 0] test_SplitReentrancy_ReleaseReentryIsCaughtAndPaysOnce() (gas: 259639)
+[FAIL: assertion failed: 700000000000000000000 != 0] test_SplitReentrancy_WithdrawReentryIsCaughtAndPaysOnce() (gas: 256836)
+
+Encountered 4 failing tests in test-planted/Sc_SplitCreditNotZeroed.t.sol:Sc_SplitCreditNotZeroed_SplitTest
+[FAIL: pending never exceeds the balance: 1197574105269852116148712416272 > 1197454347859325130937097545032; counterexample: calldata=0xd533ee1a000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000d17d4b0d args=[1, 3514649357 [3.514e9]]] testFuzz_Split_ManyReleasesNeverOverpayAndStayWithinOneUnit(uint16,uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: assertion failed: 161000000000000000000 != 140000000000000000000] test_Split_LaterDepositsAreSplitToo() (gas: 235104)
+[FAIL: Error != expected error: ERC20InsufficientBalance(0x2e234DAe75C793f67A35089C9d99245E1C58470b, 300000000000000000000 [3e20], 700000000000000000000 [7e20]) != NothingToWithdraw()] test_Split_SecondWithdrawFindsNothing() (gas: 224907)
+[FAIL: assertion failed: 700000000000000000000 != 0] test_Split_WithdrawPaysEachPayeeItsShare() (gas: 232576)
+
+Encountered a total of 43 failing tests, 146 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 43 failed tests
+
+Fuzz seed: 0x554ef6c2847257f8966b74e41e64d72b77b06b4361e29ffea5f120ffdbdd46b1 (use `--fuzz-seed` to reproduce)

@@ -1,0 +1,41 @@
+No files changed, compilation skipped
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ contracts/DripFaucet.sol:50:13
+   │
+50 │         if (block.timestamp < nextClaimAt[msg.sender]) revert CooldownActive(nextClaimAt[msg.sender]);
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://book.getfoundry.sh/reference/forge/forge-lint#block-timestamp
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ contracts/DripVault.sol:50:13
+   │
+50 │         if (block.timestamp < nextDripAt) revert DripTooSoon(nextDripAt);
+   │             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://book.getfoundry.sh/reference/forge/forge-lint#block-timestamp
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ contracts/test/mocks/DripHandler.sol:73:45
+   │
+73 │             if (lastDripAt[p.vault] != 0 && block.timestamp < lastDripAt[p.vault] + p.period) periodViolation = true;
+   │                                             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://book.getfoundry.sh/reference/forge/forge-lint#block-timestamp
+
+warning[block-timestamp]: usage of `block.timestamp` in a comparison may be manipulated by validators
+   ╭▸ contracts/test/mocks/DripHandler.sol:92:30
+   │
+92 │             if (prev != 0 && block.timestamp < prev + p.cooldown) cooldownViolation = true;
+   │                              ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   │
+   ╰ help: https://book.getfoundry.sh/reference/forge/forge-lint#block-timestamp
+
+warning[erc20-unchecked-transfer]: ERC20 'transfer' and 'transferFrom' calls should check the return value
+    ╭▸ contracts/test/mocks/DripHandler.sol:113:9
+    │
+113 │         token.transfer(to, amount);
+    │         ━━━━━━━━━━━━━━━━━━━━━━━━━━
+    │
+    ╰ help: https://book.getfoundry.sh/reference/forge/forge-lint#erc20-unchecked-transfer
+
